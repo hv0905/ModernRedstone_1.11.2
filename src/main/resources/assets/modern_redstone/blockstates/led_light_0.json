@@ -1,0 +1,9 @@
+{
+    "variants":{
+        "normal":{
+            "model":"modern_redstone:led_light"
+        }
+        
+        
+    }
+}

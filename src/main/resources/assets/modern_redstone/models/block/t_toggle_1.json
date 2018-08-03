@@ -1,0 +1,23 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "status":"modern_redstone:t_1",
+        "t":"modern_redstone:t_t",
+        "o":"modern_redstone:t_o",
+        "particle": "modern_redstone:t_t"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#status", "cullface": "down" },
+                "up":    { "uv": [ 0, 16, 16, 0 ], "texture": "#status", "cullface": "up" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#t", "cullface": "north" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#o", "cullface": "south" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#status", "cullface": "west" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#status", "cullface": "east" }
+            }
+        }
+    ]
+}
+

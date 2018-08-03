@@ -1,0 +1,16 @@
+[
+{
+  "modid": "modern_redstone",
+  "name": "Modern Redstone 高级红石",
+  "description": "简化你的红石电路",
+  "version": "1.0.0",
+  "mcversion": "1.11.2",
+  "url": "http://hv0905.github.io/modernredstone.html",
+  "updateUrl": "http://hv0905.github.io/modernredstone.html",
+  "credits": "by HV0905",
+  "logoFile": "titleshot.png",
+  "screenshots": [],
+  "dependencies": [],
+  "authorList": ["HIM_HV0905","GITHUB Feedbacker"]
+}
+]

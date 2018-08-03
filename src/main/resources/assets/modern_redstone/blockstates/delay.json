@@ -1,0 +1,7 @@
+{
+    "variants":{
+        "normal":{
+            "model":"modern_redstone:delay"
+        }
+    }
+}

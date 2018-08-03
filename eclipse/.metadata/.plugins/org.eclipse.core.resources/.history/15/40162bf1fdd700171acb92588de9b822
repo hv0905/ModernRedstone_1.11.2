@@ -1,0 +1,201 @@
+package com.hv0905.modernRedstone;
+
+import net.minecraft.block.*;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.*;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+@Mod(modid=ModernRedstoneMain.MODID,name=ModernRedstoneMain.NAME,version=ModernRedstoneMain.VERSION)
+public class ModernRedstoneMain {
+
+	//Mod information
+	public static final String MODID="modern_redstone";
+	public static final String NAME="Modern Redstone";
+	public static final String VERSION="1.0.0";
+
+	//blocks
+	public static BlockSilicon blockSilicon;
+	public static BlockLedGrowObject blockLedGrowObject;
+	public static BlockLedLight[] blockLedLight;
+	public static BlockDigitalDisplay blockDigitalDisplay;
+	public static BlockBitLedDisplay blockBitLedDisplay;
+	public static BlockDelay blockDelay;
+	public static BlockColorLed blockColorLed;
+	public static BlockRSLocker blockRSLocker;
+	
+	//items
+	public static ItemSilicon itemSilicon;
+	public static ItemChipset itemChipset;
+	public static ItemComputingChip itemComputingChip;
+	public static ItemIoChip itemIoChip;
+	public static ItemTimeChip itemTimeChip;
+	public static ItemMiniLed itemMiniLed;
+	public static ItemRgbGlass itemRgbGlass;
+	public static ItemResistor itemResistor;
+	
+	
+	//预加载
+	@EventHandler
+	public void perInit(FMLPreInitializationEvent event){
+		System.out.println(MODID + " start perIniting");
+		
+		///注册方块和物品
+		
+		blockLedGrowObject = new BlockLedGrowObject();
+		GameRegistry.register(blockLedGrowObject);
+		GameRegistry.register(new ItemBlock(blockLedGrowObject).setRegistryName(MODID,BlockLedGrowObject.BLOCK_ID));
+		
+		blockSilicon = new BlockSilicon();
+		GameRegistry.register(blockSilicon);
+		GameRegistry.register(new ItemBlock(blockSilicon).setRegistryName(MODID,BlockSilicon.BLOCK_ID));
+		
+		blockLedLight = new BlockLedLight[16];
+		for(int i = 0;i < 16;i++){
+			blockLedLight[i] = new BlockLedLight(i);
+			GameRegistry.register(blockLedLight[i]);
+		}
+		GameRegistry.register(new ItemBlock(blockLedLight[0]).setRegistryName(MODID,BlockLedLight.BLOCK_ID));
+		
+		blockDigitalDisplay = new BlockDigitalDisplay();
+		GameRegistry.register(blockDigitalDisplay);
+		GameRegistry.register(new ItemBlock(blockDigitalDisplay).setRegistryName(MODID, BlockDigitalDisplay.BLOCK_ID));
+				
+		blockBitLedDisplay = new BlockBitLedDisplay();
+		GameRegistry.register(blockBitLedDisplay);
+		GameRegistry.register(new ItemBlock(blockBitLedDisplay).setRegistryName(MODID,BlockBitLedDisplay.BLOCK_ID));
+		
+		//blockDelay = new BlockDelay();
+		//GameRegistry.register(blockDelay);
+		//GameRegistry.register(new ItemBlock(blockDelay).setRegistryName(MODID,BlockDelay.BLOCK_ID));
+		
+		blockColorLed = new BlockColorLed();
+		GameRegistry.register(blockColorLed);
+		GameRegistry.register(new ItemBlock(blockColorLed).setRegistryName(MODID,BlockColorLed.BLOCK_ID));
+		
+		blockRSLocker = new BlockRSLocker();
+		GameRegistry.register(blockRSLocker);
+		GameRegistry.register(new ItemBlock(blockRSLocker).setRegistryName(MODID, BlockRSLocker.BLOCK_ID));
+		
+		
+
+		itemSilicon = new ItemSilicon();
+		GameRegistry.register(itemSilicon);
+		
+		itemChipset = new ItemChipset();
+		GameRegistry.register(itemChipset);
+		
+		itemComputingChip = new ItemComputingChip();
+		GameRegistry.register(itemComputingChip);
+		
+		itemIoChip = new ItemIoChip();
+		GameRegistry.register(itemIoChip);
+		
+		itemTimeChip = new ItemTimeChip();
+		GameRegistry.register(itemTimeChip);
+		
+		itemMiniLed = new ItemMiniLed();
+		GameRegistry.register(itemMiniLed);
+		
+		itemRgbGlass = new ItemRgbGlass();
+		GameRegistry.register(itemRgbGlass);
+		
+		itemResistor = new ItemResistor();
+		GameRegistry.register(itemResistor);
+		
+		
+		
+		proxy.loadModel();//客户端载入模型
+		
+		
+		///~添加方块和物品
+		
+		System.out.println(MODID + " finish perIniting");
+	}
+	
+	//加载
+	@EventHandler
+	public void init(FMLInitializationEvent event){
+		System.out.println(MODID + " start initing");
+		
+		///合成和烧制
+		GameRegistry.addSmelting(Blocks.GLASS, new ItemStack(itemSilicon), 0.35f);
+		
+		GameRegistry.addRecipe(new ItemStack(blockSilicon,1),"aaa","aaa","aaa",'a',itemSilicon);
+		GameRegistry.addRecipe(new ItemStack(itemSilicon,9),"a",'a',blockSilicon);
+		
+		GameRegistry.addRecipe(new ItemStack(blockLedGrowObject,1)," a ","aba"," a ",'a',itemSilicon,'b',Items.GLOWSTONE_DUST);
+		GameRegistry.addRecipe(new ItemStack(Item.getItemFromBlock(blockLedLight[0]),1)," a ","cbc"," a ",'a',Items.REDSTONE,'b',blockLedGrowObject,'c',itemIoChip);
+		GameRegistry.addRecipe(new ItemStack(blockDigitalDisplay,1),"a","b","c",'a',itemIoChip,'b',blockLedGrowObject,'c',itemChipset);
+		GameRegistry.addRecipe(new ItemStack(blockBitLedDisplay,1),"aab","aac",'a',Blocks.GLASS_PANE,'b',itemIoChip,'c',blockLedGrowObject);
+		//GameRegistry.addRecipe(new ItemStack(blockDelay,1)," a ","bcb"," a ",'a',Items.IRON_INGOT,'b',itemIoChip,'c',itemTimeChip);
+		GameRegistry.addRecipe(new ItemStack(blockColorLed),"abc"," d ",'a',itemIoChip,'b',itemRgbGlass,'c',itemChipset,'d',blockLedGrowObject);
+		GameRegistry.addRecipe(new ItemStack(blockRSLocker),"abd","bad","eec",'a',Blocks.REDSTONE_TORCH,'b',Items.REDSTONE,'c',itemIoChip,'d',itemMiniLed,'e',Items.IRON_INGOT);
+		
+		GameRegistry.addRecipe(new ItemStack(itemChipset,1),"aba","bab","aba",'a',Items.REDSTONE,'b',itemSilicon);
+		GameRegistry.addRecipe(new ItemStack(itemComputingChip,1)," a ","aba"," a ",'a',itemSilicon,'b',itemChipset);
+		GameRegistry.addRecipe(new ItemStack(itemIoChip,1)," a ","aba"," a ",'a',Items.REDSTONE,'b',itemChipset);
+		GameRegistry.addRecipe(new ItemStack(itemTimeChip,1)," a ","aba"," a ",'a',Items.QUARTZ,'b',itemChipset);
+		GameRegistry.addRecipe(new ItemStack(itemRgbGlass,1),"abc"," d "," e ",'a',new ItemStack(Items.DYE,1,1),'b',new ItemStack(Items.DYE,1,2),'c',new ItemStack(Items.DYE,1,4),'d',Blocks.GLASS_PANE,'e',Blocks.PISTON);
+		GameRegistry.addShapelessRecipe(new ItemStack(itemMiniLed,16), blockLedLight[0],Items.IRON_INGOT);
+		
+		///~合成和烧制
+		
+		System.out.println(MODID + " finish initing");
+	}
+	
+	//完成加载
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event){
+		System.out.println(MODID + " start postIniting");
+		
+		System.out.println(MODID + " finish postIniting");
+	}
+	
+	///物品材质加载
+	
+	@SidedProxy//自动分配proxy
+	public static ServerProxy proxy;
+	
+	public static class ServerProxy{
+		
+		public void loadModel(){
+			
+		}
+		
+	}
+	//
+	public static class ClientProxy extends ServerProxy{
+		
+		@Override
+		public void loadModel(){
+			super.loadModel();
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockLedGrowObject),0,new ModelResourceLocation(MODID+":"+BlockLedGrowObject.BLOCK_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockSilicon),0,new ModelResourceLocation(MODID + ":" + BlockSilicon.BLOCK_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockLedLight[0]), 0, new ModelResourceLocation(MODID + ":" + BlockLedLight.BLOCK_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockDigitalDisplay),0,new ModelResourceLocation(MODID + ":"+ BlockDigitalDisplay.BLOCK_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockBitLedDisplay), 0, new ModelResourceLocation(MODID + ":" + BlockBitLedDisplay.BLOCK_ID,"inventory"));
+			//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockDelay), 0, new ModelResourceLocation(MODID+":"+BlockDelay.BLOCK_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockColorLed), 0, new ModelResourceLocation(MODID+":"+BlockColorLed.BLOCK_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockRSLocker), 0, new ModelResourceLocation(MODID+":"+BlockRSLocker.BLOCK_ID,"inventory"));
+			
+			ModelLoader.setCustomModelResourceLocation(itemSilicon, 0, new ModelResourceLocation(MODID + ":" + ItemSilicon.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemChipset, 0, new ModelResourceLocation(MODID + ":" + ItemChipset.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemComputingChip, 0, new ModelResourceLocation(MODID+":" + ItemChipset.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemIoChip, 0, new ModelResourceLocation(MODID+":"+ItemChipset.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemTimeChip, 0, new ModelResourceLocation(MODID+":"+ItemChipset.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemMiniLed, 0, new ModelResourceLocation(MODID+":"+ItemMiniLed.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemRgbGlass, 0, new ModelResourceLocation(MODID+":"+ItemRgbGlass.ITEM_ID,"inventory"));
+			ModelLoader.setCustomModelResourceLocation(itemResistor, 0, new ModelResourceLocation(MODID+":"+ItemResistor.ITEM_ID,"inventory"));
+		}
+	}
+	
+	///~物品材质加载
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ModernRedstoneMod/src/main/resources/assets/modern_redstone/textures/电阻_16x.png&apos; to &apos;resistor.png&apos;" description="Rename resource &apos;电阻_16x.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/assets/modern_redstone/textures/电阻_16x.png" name="resistor.png" stamp="1504436603549" updateReferences="true"/>
+</session>

@@ -1,0 +1,8 @@
+{
+    "variants":{
+        "normal":{
+            "model":"modern_redstone:silicon_block"
+            
+        }
+    }
+}

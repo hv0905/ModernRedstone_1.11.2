@@ -1,0 +1,6 @@
+{
+    "parent":"block/cube_all",
+    "textures":{
+        "all":"modern_redstone:color_led_2"
+    }
+}

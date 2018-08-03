@@ -1,0 +1,10 @@
+COMMA.prefix=NONE
+eclipse.preferences.version=1
+showWhitespaceInPrefPage=false
+styleBoolean.isBold=false
+styleBoolean.isItalic=false
+styleError.isBold=true
+styleError.isItalic=false
+styleNull.isBold=false
+styleNull.isItalic=false
+styleText.isItalic=true

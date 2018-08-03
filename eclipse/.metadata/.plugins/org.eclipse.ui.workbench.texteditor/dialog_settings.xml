@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="1" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="1"/>
+			<item value="Power"/>
+			<item value="getWeakPower"/>
+			<item value="getWeak"/>
+			<item value="PISTON"/>
+			<item value="power"/>
+			<item value="redstone"/>
+			<item value="cd=true"/>
+			<item value="cd=false"/>
+			<item value="tpower=false"/>
+			<item value="REDSTONE_BLOCK"/>
+			<item value="canProvidePower"/>
+			<item value="isAlternateInput"/>
+			<item value="getBoundingBox"/>
+			<item value="BlockState"/>
+		</list>
+		<list key="replacehistory">
+			<item value="16"/>
+			<item value=""/>
+			<item value="cd=true"/>
+			<item value="tpower=true"/>
+			<item value="powered"/>
+			<item value="bit_led_display"/>
+			<item value="bit_led_lamp"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="300" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="410" key="DIALOG_HEIGHT"/>
+		<item value="1581" key="DIALOG_X_ORIGIN"/>
+		<item value="293" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

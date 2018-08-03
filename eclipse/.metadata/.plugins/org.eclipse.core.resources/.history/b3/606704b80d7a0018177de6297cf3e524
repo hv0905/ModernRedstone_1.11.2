@@ -1,0 +1,23 @@
+{
+    "variants":{
+        "cd=false,facing=north,powered=false": { "model": "modern_redstone:rs_locker_b" },
+        "cd=false,facing=south,powered=false": { "model": "modern_redstone:rs_locker_b", "y": 180 },
+        "cd=false,facing=west,powered=false":  { "model": "modern_redstone:rs_locker_b", "y": 270 },
+        "cd=false,facing=east,powered=false":  { "model": "modern_redstone:rs_locker_b", "y": 90 },
+        "cd=false,facing=north,powered=true": { "model": "modern_redstone:rs_locker_a" },
+        "cd=false,facing=south,powered=true": { "model": "modern_redstone:rs_locker_a", "y": 180 },
+        "cd=false,facing=west,powered=true":  { "model": "modern_redstone:rs_locker_a", "y": 270 },
+        "cd=false,facing=east,powered=true":  { "model": "modern_redstone:rs_locker_a", "y": 90 },
+        "cd=true,facing=north,powered=false": { "model": "modern_redstone:rs_locker_b" },
+        "cd=true,facing=south,powered=false": { "model": "modern_redstone:rs_locker_b", "y": 180 },
+        "cd=true,facing=west,powered=false":  { "model": "modern_redstone:rs_locker_b", "y": 270 },
+        "cd=true,facing=east,powered=false":  { "model": "modern_redstone:rs_locker_b", "y": 90 },
+        "cd=true,facing=north,powered=true": { "model": "modern_redstone:rs_locker_a" },
+        "cd=true,facing=south,powered=true": { "model": "modern_redstone:rs_locker_a", "y": 180 },
+        "cd=true,facing=west,powered=true":  { "model": "modern_redstone:rs_locker_a", "y": 270 },
+        "cd=true,facing=east,powered=true":  { "model": "modern_redstone:rs_locker_a", "y": 90 },
+        
+    }
+    
+
+}

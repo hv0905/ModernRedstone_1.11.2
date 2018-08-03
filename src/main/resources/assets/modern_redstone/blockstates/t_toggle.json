@@ -1,0 +1,21 @@
+{
+    "variants":{
+        "facing=north,power=false,tpower=false": { "model": "modern_redstone:t_toggle_0" },
+        "facing=south,power=false,tpower=false": { "model": "modern_redstone:t_toggle_0", "y": 180 },
+        "facing=west,power=false,tpower=false":  { "model": "modern_redstone:t_toggle_0", "y": 270 },
+        "facing=east,power=false,tpower=false":  { "model": "modern_redstone:t_toggle_0", "y": 90 },
+        "facing=north,power=true,tpower=false": { "model": "modern_redstone:t_toggle_1" },
+        "facing=south,power=true,tpower=false": { "model": "modern_redstone:t_toggle_1", "y": 180 },
+        "facing=west,power=true,tpower=false":  { "model": "modern_redstone:t_toggle_1", "y": 270 },
+        "facing=east,power=true,tpower=false":  { "model": "modern_redstone:t_toggle_1", "y": 90 },
+        "facing=north,power=false,tpower=true": { "model": "modern_redstone:t_toggle_0" },
+        "facing=south,power=false,tpower=true": { "model": "modern_redstone:t_toggle_0", "y": 180 },
+        "facing=west,power=false,tpower=true":  { "model": "modern_redstone:t_toggle_0", "y": 270 },
+        "facing=east,power=false,tpower=true":  { "model": "modern_redstone:t_toggle_0", "y": 90 },
+        "facing=north,power=true,tpower=true": { "model": "modern_redstone:t_toggle_1" },
+        "facing=south,power=true,tpower=true": { "model": "modern_redstone:t_toggle_1", "y": 180 },
+        "facing=west,power=true,tpower=true":  { "model": "modern_redstone:t_toggle_1", "y": 270 },
+        "facing=east,power=true,tpower=true":  { "model": "modern_redstone:t_toggle_1", "y": 90 }
+    }
+
+}

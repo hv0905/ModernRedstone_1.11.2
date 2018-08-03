@@ -1,0 +1,23 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "status":"modern_redstone:rs_locker_status_b",
+        "a":"modern_redstone:rs_locker_a",
+        "b":"modern_redstone:rs_locker_b",
+        "particle": "modern_redstone:rs_locker_a"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 1, 1, 1 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 1, 1 ], "texture": "#status", "cullface": "down" },
+                "up":    { "uv": [ 0, 1, 1, 0 ], "texture": "#status", "cullface": "up" },
+                "north": { "uv": [ 0, 0, 1, 1 ], "texture": "#a", "cullface": "north" },
+                "south": { "uv": [ 0, 0, 1, 1 ], "texture": "#b", "cullface": "south" },
+                "west":  { "uv": [ 0, 0, 1, 1 ], "texture": "#status", "cullface": "west" },
+                "east":  { "uv": [ 0, 0, 1, 1 ], "texture": "#status", "cullface": "east" }
+            }
+        }
+    ]
+}
+

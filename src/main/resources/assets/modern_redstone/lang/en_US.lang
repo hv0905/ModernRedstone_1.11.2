@@ -1,0 +1,16 @@
+tile.modern_redstone.ledgrow_obj.name=LED Growing Object
+tile.modern_redstone.silicon_block.name=Silicon Block
+tile.modern_redstone.led_light_0.name=LED Lamp
+tile.modern_redstone.digital_display.name=LED Digital Display
+tile.modern_redstone.bit_led_display.name=4 Bit Led Display
+tile.modern_redstone.color_led.name=RGB led Light
+tile.modern_redstone.rs_locker.name=RS Locker
+tile.modern_redstone.t_toggle.name=T Toggle
+
+item.modern_redstone.silicon.name=Silicon
+item.modern_redstone.chipset.name=Basic chipset
+item.modern_redstone.computing_chip.name=computing chip
+item.modern_redstone.io_chip.name=IO Chip
+item.modern_redstone.time_chip.name=Time Chip
+item.modern_redstone.mini_led.name=Mini Led Light
+item.modern_redstone.rgb_glass.name=RGB Changing Glass
